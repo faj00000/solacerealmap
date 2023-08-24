@@ -1,0 +1,93 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Purple Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="{% static 'vendors/mdi/css/materialdesignicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/css/vendor.bundle.base.css' %}">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="{% static 'images/logo-mini.svg' %}" >
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <!--   <a class="navbar-brand brand-logo" href="../../index.html"><img src="{% static 'images/logo.svg' %}" alt="logo" /></a>
+          <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="{% static 'images/logo-mini.svg' %}" alt="logo" /></a>-->
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+
+            <div class="row">
+              <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Diary Entry</h4>
+                    <p class="card-description"> Its safe here </p>
+                    <form class="forms-sample" action="/diary/" method="post">
+                      {% csrf_token %}
+                      <div class="form-group">
+                        <label >{{ day }}, {{ datetime }}</label>
+                      </div>
+                      <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+                      </div>
+                      <div>
+                      <label for="Entry">Entry</label>
+                        <textarea class="form-control" id="Entry" name="entry" rows="4"></textarea>
+                      </div>
+                      <div>
+                        <br>
+                      <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
+                      <!--<button class="btn btn-light">Cancel</button>-->
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          <!--<footer class="footer">
+            <div class="container-fluid d-flex justify-content-between">
+              <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Copyright © bootstrapdash.com 2021</span>
+              <span class="float-none float-sm-end mt-1 mt-sm-0 text-end"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin template</a> from Bootstrapdash.com</span>
+            </div>
+          </footer>-->
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <!--<script src="% static 'vendors/js/vendor.bundle.base.js' %}"></script>
+
+    <script src="% static 'js/off-canvas.js' %"></script>
+    <script src="% static 'js/hoverable-collapse.js' %"></script>
+    <script src="% static 'js/misc.js' %"></script>
+
+    <script src="% static 'js/file-upload.js' %"></script>
+ End custom js for this page -->
+  </body>
+</html>
